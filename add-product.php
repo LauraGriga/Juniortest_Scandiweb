@@ -8,7 +8,7 @@
     <div>
         <h1>Product Add</h1>
         <button type="submit">Save</button> <!--Need to add function which after submiting send data to server and redirects to productict list page-->
-        <button onclick="window.location.href='productlist.html'">Cancel</button>
+        <button onclick="window.location.href='productlist.php'">Cancel</button>
     <hr>
     
     </div>

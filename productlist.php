@@ -7,7 +7,7 @@
     </head>
     <div>
         <h1>Product list</h1>
-        <button type="button" onclick="window.location.href='add-product.html'">ADD</button>
+        <button type="button" onclick="window.location.href='add-product.php'">ADD</button>
         <button id="delete-product-btn" onclick=""> MASS DELETE</button>
     <hr>
     
