@@ -7,14 +7,14 @@
     </head>
     <div>
         <h1>Product Add</h1>
-        <button type="submit">Save</button> <!--Need to add function which after submiting send data to server and redirects to productict list page-->
+        <button type="submit" onclick="save()">Save</button> <!--Need to add function which after submiting send data to server and redirects to productict list page-->
         <button onclick="window.location.href='productlist.php'">Cancel</button>
     <hr>
     
     </div>
     
     <body>
-        <form id="product_form" method="post" name="productform">
+           <form id="product_form" method="post" name="productform">
             <label for="sku" id="sku">SKU</label>
             <input type="text" id="sku" name="sku" required>
             <br><br>
@@ -25,7 +25,7 @@
             <input type="text" id="price" name="price" required>
             <br><br>
             <label for="productType">Type Switcher</label>
-            <select name="productType" id="productType" onChange="prodTypeSelection()"  required>
+            <select name="productType" id="productType" required onselect="prodTypeSelection()">
                 <option value="">Type Switcher</option>
                 <option value="dvd">DVD</option>
                 <option value="book">Book</option>

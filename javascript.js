@@ -1,14 +1,12 @@
 function prodTypeSelection(){
-    const prodType = document.getElementById("productType"); 
-    const labelDvd=createElement("label"); 
-    labelDvd.setAttribute("for", "size");
-    labelDvd.document.write("Size (MB)");
-    prodType.appendChild(labelDvd);
+    var prodType = document.getElementById("productType"); 
+    
+    
     
 }
 
 
-/* <!--
+/* 
 Maybe there I need JS function add
 Selection DVD
 
@@ -35,3 +33,8 @@ Selection books
 <label for="weight">Weight (KG)</label>
 <input type="text" id="weight">
 !!!! Need to add description section "Please, provide weight"--> */
+
+function save() {
+       document.getElementById("product_form").submit(); 
+       //There should add function that will send data to database
+}
