@@ -14,7 +14,7 @@
     </div>
     
     <body>
-        <form id="product_form">
+        <form id="product_form" method="post" name="productform">
             <label for="sku" id="sku">SKU</label>
             <input type="text" id="sku" name="sku" required>
             <br><br>
@@ -25,7 +25,7 @@
             <input type="text" id="price" name="price" required>
             <br><br>
             <label for="productType">Type Switcher</label>
-            <select name="productType" id="productType" required onselect="prodTypeSelection()">
+            <select name="productType" id="productType" onChange="prodTypeSelection()"  required>
                 <option value="">Type Switcher</option>
                 <option value="dvd">DVD</option>
                 <option value="book">Book</option>
@@ -33,34 +33,8 @@
              </select>
              <br><br>
 
-             <div id="prodTypeSelection">
-            <!--
-                Maybe there I need JS function add
-             Selection DVD
-             /* 
-             <label for="size">Size (MB)</label>
-             <input type="text" id="size">
              
-             !!!! Need to add description section "Please, provide size"
-             
-             <br><br>
-
-             Selection Furniture
-             <label for="height">Height (CM)</label>
-             <input type="text" id="height">
-             <br><br>
-             <label for="width">Width (CM)</label>
-             <input type="text" id="width">
-             <br><br>
-             <label for="length">Length (CM)</label>
-             <input type="text" id="length">
-            !!!! Need to add description section "Please, provide dimensions"
-             <br><br>
-
-             Selection books
-             <label for="weight">Weight (KG)</label>
-             <input type="text" id="weight">
-             !!!! Need to add description section "Please, provide weight"-->
+           
              <br><br>
             
 
