@@ -13,7 +13,7 @@ card.setAttribute("class", "card");
 
 const checkbox = document.createElement("input");
 checkbox.setAttribute("type", "checkbox"); 
-checkbox.setAttribute("id", "delete-chechbox")
+checkbox.setAttribute("id", "delete-checkbox")
 
 
 
