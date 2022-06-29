@@ -23,8 +23,7 @@ h1 {
 #description {
     font-size: 1rem;
     color: rgb(57, 44, 173);
-    padding: 0.75rem 2.75rem;
-    font-style:oblique;
+    padding: 0.75rem 5rem;
 
 }
 
@@ -41,7 +40,12 @@ button{
     background-color: white;
     border: 1px solid #e04f4f;
     box-shadow: 5px 1px 1px rgb(44, 41, 41);
+
 }
+div.buttonposition{
+    text-align: right;
+}
+
 button:hover{
     background-color: #e04f4f;
     border: #e04f4f;

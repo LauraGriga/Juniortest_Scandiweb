@@ -5,13 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-    <div>
+    
         <h1>Product Add</h1>
+        <div class = "buttonposition">
         <button type="submit" onclick="save()">Save</button> <!--Need to add function which after submiting send data to server and redirects to productict list page-->
-        <button onclick="window.location.href='productlist.php'">Cancel</button>
+        <button onclick="window.location.href='productlist.php'">Cancel</button></div>
+
     <hr>
     
-    </div>
+    
     
     <body>
            <form id="product_form" method="post" name="productform">
