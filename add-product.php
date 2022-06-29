@@ -46,7 +46,7 @@
 
 
     </body>
-    <script src="javascript.js"></script>
+    <script src="addproducts.js"></script>
     <hr>
     <footer>Scandiweb Test assigment</footer>
 </html>
