@@ -17,33 +17,47 @@
            <form id="product_form" method="post" name="productform">
             <label for="sku" id="sku">SKU</label>
             <input type="text" id="sku" name="sku" required>
-            <br><br>
+            <br>
             <label for="name" id="name">Name</label>
             <input type="text" id="name" name="name" required>
-            <br><br>
+            <br>
             <label for="price" id="price">Price($)</label>
-            <input type="text" id="price" name="price" required>
-            <br><br>
+            <input type="number" id="price" name="price" required>
+            <br>
             <label for="productType">Type Switcher</label>
-            <select name="productType" id="productType" required onchange="prodTypeSelection()">
+            <select name="productType" id="productType" required onchange="prodTypeSelection(this.value)">
                 <option value="">Type Switcher</option>
                 <option value="dvd" class="dvd">DVD</option>
                 <option value="book" class="book">Book</option>
                 <option value="furniture" class="furniture">Furniture</option>
-             </select>
-             <br><br>
-             
+            </select>
+            <br>
 
-             
-           
-             <br><br>
+                <div class="fieldbox" id="dvd_attributes">
+                <label>Size (MB)</label>
+                <input type="number" name="size" id="size" value="" required>
+                <div id="description">Please, provide size!</div>
+                </div>
+
+                <div class="fieldbox" id="book_attributes">
+                <label>Weight(KG)</label>
+                <input type="text" id="weight" name="weight" value=""required>
+                <div id="description">Please, provide weight!</div>
+                </div>
+
+                <div class="fieldbox" id="furniture_attributes">
+                <label for="height">Height (CM)</label>
+                <input type="number" id="height" required>
+                <br>
+                <label for="width">Width (CM)</label>
+                <input type="number" id="width" required>
+                <br>
+                <label for="length">Length (CM)</label>
+                <input type="number" id="length" required>
+                <div id="description">Please, provide dimensions!</div>
+                </div>
             
-
-            </div>
         </form>
-        
-        
-
 
     </body>
     <script src="addproducts.js"></script>
