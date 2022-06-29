@@ -13,9 +13,9 @@
     
     </div>
     <body>
+        <div id="productlist"></div>
+        <script src="getproducts.js"></script>
         
-        
-
 
     </body>
     

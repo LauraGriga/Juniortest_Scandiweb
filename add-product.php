@@ -25,13 +25,14 @@
             <input type="text" id="price" name="price" required>
             <br><br>
             <label for="productType">Type Switcher</label>
-            <select name="productType" id="productType" required onselect="prodTypeSelection()">
+            <select name="productType" id="productType" required onchange="prodTypeSelection()">
                 <option value="">Type Switcher</option>
-                <option value="dvd">DVD</option>
-                <option value="book">Book</option>
-                <option value="furniture">Furniture</option>
+                <option value="dvd" class="dvd">DVD</option>
+                <option value="book" class="book">Book</option>
+                <option value="furniture" class="furniture">Furniture</option>
              </select>
              <br><br>
+             
 
              
            
