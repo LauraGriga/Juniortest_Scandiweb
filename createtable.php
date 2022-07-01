@@ -4,14 +4,13 @@ require_once 'connectdb.php';
 try {
     $sql = "CREATE TABLE IF NOT EXISTS productlist (
         id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-        sku TEXT NOT NULL UNIQUE,
+        sku TEXT NOT NULL,
         name TEXT NOT NULL,
-        price INT NOT NULL,
+        price DECIMAL NOT NULL,
         productType TEXT NOT NULL, 
-        dvd_attributes INT NOT NULL, 
-        book_attributes INT NOT NULL, 
-        furniture_attributes INT NOT NULL
-
+        dvd_attributes INT, 
+        book_attributes INT, 
+        furniture_attributes TEXT
     )";
 
     $conn->exec($sql);

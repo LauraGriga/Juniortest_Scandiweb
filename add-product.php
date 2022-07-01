@@ -8,7 +8,7 @@
     
         <h1>Product Add</h1>
         <div class = "buttonposition">
-        <button type="submit" onclick="save()">Save</button> <!--Need to add function which after submiting send data to server and redirects to productict list page-->
+        <button type="submit" >Save</button> <!--(onclick="window.location.href='productlist.php'")Need to add function which after submiting send data to server and redirects to productict list page-->
         <button onclick="window.location.href='productlist.php'">Cancel</button></div>
     <hr>
     
@@ -21,7 +21,7 @@
     try {
         $stmt = $conn->prepare("INSERT INTO productlist
         (sku, name, price, productType, dvd_attributes, book_attributes, furniture_attributes)
-        VALUES(:sku, :name, :price, :productType, :dvd_attributes, :book_attributes, :furniture_attributes)");
+        VALUES(:sku, :name, :price, :productType, :dvd_attributes, book_attributes, furniture_attributes)");
         $stmt->bindParam(':sku', $sku);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':price', $price);
@@ -67,7 +67,7 @@
                 <option value="furniture" class="furniture">Furniture</option>
             </select>
             <br>
-
+            <!-- How to get information from fields bellow to database-->
                 <div class="fieldbox" id="dvd_attributes">
                 <label>Size (MB)</label>
                 <input type="number" name="size" id="size" value="" required>
