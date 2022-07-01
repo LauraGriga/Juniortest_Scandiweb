@@ -61,8 +61,6 @@ $conn = null;
 ?>
 
     </body>
-    
-    <script src="javascript.js"></script>
     <hr>
     <footer>Scandiweb Test assigment</footer>
 </html>
