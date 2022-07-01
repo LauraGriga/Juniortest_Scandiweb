@@ -10,12 +10,45 @@
         <div class = "buttonposition">
         <button type="submit" onclick="save()">Save</button> <!--Need to add function which after submiting send data to server and redirects to productict list page-->
         <button onclick="window.location.href='productlist.php'">Cancel</button></div>
-
     <hr>
     
-    
-    
     <body>
+
+    <?php 
+    require_once 'connectdb.php';
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    try {
+        $stmt = $conn->prepare("INSERT INTO productlist
+        (sku, name, price, productType, dvd_attributes, book_attributes, furniture_attributes)
+        VALUES(:sku, :name, :price, :productType, :dvd_attributes, :book_attributes, :furniture_attributes)");
+        $stmt->bindParam(':sku', $sku);
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':price', $price);
+        $stmt->bindParam(':productType', $productType);
+        $stmt->bindParam(':dvd_attributes', $dvd_attributes);
+        $stmt->bindParam(':book_attributes', $book_attributes);
+        $stmt->bindParam(':furniture_attributes', $furniture_attributes);
+
+        $sku = $_POST['sku']; 
+        $name = $_POST['name']; 
+        $price = $_POST['price']; 
+        $productType = $_POST['productType']; 
+        $dvd_attributes = $_POST['dvd_attributes']; 
+        $book_attributes = $_POST['book_attributes']; 
+        $furniture_attributes = $_POST['furniture_attributes']; 
+
+        $stmt->execute();
+
+        echo "<p>Data is succesfully saved!</p>";
+
+    } catch (PDOException $e) {
+        echo "<p>Error: " . $e->getMessage() . "</p>";
+    }
+}
+
+?>
+
            <form id="product_form" action="add-product.php" method="post" name="productform" >
             <label for="sku" id="sku">SKU</label>
             <input type="text" id="sku" name="sku" required>
@@ -43,7 +76,7 @@
 
                 <div class="fieldbox" id="book_attributes">
                 <label>Weight(KG)</label>
-                <input type="text" id="weight" name="weight" value=""required>
+                <input type="number" id="weight" name="weight" value=""required>
                 <div id="description">Please, provide weight!</div>
                 </div>
 
@@ -66,3 +99,4 @@
     <hr>
     <footer>Scandiweb Test assigment</footer>
 </html>
+
