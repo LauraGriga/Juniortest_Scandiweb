@@ -20,8 +20,8 @@ checkbox.setAttribute("id", "delete-checkbox")
 const sku = document.createElement("h4"); //SKU 
 sku.textContent = product.sku; 
 
-const name = document.createElement("h4"); //name
-name.textContent = product.name;
+const prodname = document.createElement("h4"); //name
+prodname.textContent = product.prodname;
 
 const price = document.createElement("h4"); //price
 price.textContent = product.price; 
@@ -34,6 +34,6 @@ attribute.textContent =product.attribute;
 container.appendChild(card);
 card.appendChild(checkbox);
 card.appendChild(sku);
-card.appendChild(name);
+card.appendChild(prodname);
 card.appendChild(price);
 card.appendChild(attribute);

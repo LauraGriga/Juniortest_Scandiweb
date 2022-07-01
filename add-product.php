@@ -16,7 +16,7 @@
     
     
     <body>
-           <form id="product_form" method="post" name="productform">
+           <form id="product_form" action="add-product.php" method="post" name="productform" >
             <label for="sku" id="sku">SKU</label>
             <input type="text" id="sku" name="sku" required>
             <br>

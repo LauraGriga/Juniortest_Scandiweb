@@ -8,6 +8,7 @@
     <div>
         <h1>Product list</h1>
         <div class = "buttonposition">
+        
         <button type="button" onclick="window.location.href='add-product.php'">ADD</button>
         <button id="delete-product-btn" onclick=""> MASS DELETE</button>
         </div>
