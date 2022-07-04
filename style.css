@@ -35,7 +35,8 @@ div.fieldbox {
     display: none;
   }
 
-  .flex-container {
+  
+.flex-container {
     display: flex;
     flex-flow: row wrap; 
     justify-content: space-around; 
@@ -44,7 +45,7 @@ div.fieldbox {
     list-style-type: none;
 }
 
-  .flex-item {
+.flex-item {
     padding: 5px;
     width: 200px;
     height: 200px;
