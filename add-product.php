@@ -20,7 +20,7 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
         $stmt = $conn->prepare("INSERT INTO productlist
-        (sku, name, price/*, productType, dvd_attributes, book_attributes, furniture_attributes*/)
+        (sku, name, price/*, productType, dvd_attributes, book_attributes, furniture_attributes*/) /* Data from dynamically changing part doesnt sends to db, need to solve*/ 
         VALUES(:sku, :name, :price/*, :productType, :dvd_attributes, book_attributes, furniture_attributes*/)");
         $stmt->bindParam(':sku', $sku);
         $stmt->bindParam(':name', $name);

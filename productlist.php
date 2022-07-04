@@ -27,21 +27,10 @@ try {
     
         foreach ($productlist as $pl) {
             echo "<div>";
-            echo '<ul class="flex-container">';
-                echo '<li class="flex-item">'. $pl['sku'] ."<br>". $pl['name'] . "<br>". $pl['price'] ."<br>". $pl['productType'] . "<br>". $pl['dvd_attributes'] ."<br>". $pl['book_attributes'] ."<br>". $pl['furniture_attributes'] . "</li>";
+            echo "<ul class=\"flex-container\>"; // Cant manage yet that class working properly and css ass well for flex item
+                echo "<li class=\"flex-item\>". $pl['sku'] ."<br>". $pl['name'] . "<br>". $pl['price'] ."<br>". $pl['productType'] . "<br>". $pl['dvd_attributes'] ."<br>". $pl['book_attributes'] ."<br>". $pl['furniture_attributes'] . "</li>";
             echo "</ul>";
         echo "</div>";
-
-
-           /* echo "<div>";
-                echo "<p>" . $pl['sku'] ."<br>" . $pl['name'] . "</p>";
-                echo "<td>" . $pl['price'] . "</td>";
-                echo "<td>" . $pl['productType'] . "</td>";
-                echo "<td>" . $pl['dvd_attributes'] . "</td>";
-                echo "<td>" . $pl['book_attributes'] . "</td>";
-                echo "<td>" . $pl['furniture_attributes'] . "</td>";
-                
-            echo "</div>";*/
         }
     
 
