@@ -13,6 +13,9 @@ const map = {
      }
 
 function save() {
-       document.getElementById("product_form").submit(); 
-       //There should add function that will send data to database
+       document.getElementById("product_form").submit();       
+}
+
+function redirect(){
+       window.location.href = "productlist.php";
 }

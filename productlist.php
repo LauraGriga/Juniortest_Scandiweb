@@ -24,34 +24,26 @@ try {
     $stmt = $conn->prepare("SELECT * FROM productlist");
     $stmt->execute();
     $productlist = $stmt->fetchAll();
-
-    echo "<table border='1' cellpading='4' style='border-collapse: collapse;'>";
-    
-        echo "<tr>";
-            echo "<th>SKU</th>";
-            echo "<th>Name</th>";
-            echo "<th>Price</th>";
-            echo "<th>Product type</th>";
-            echo "<th>DVD Attribute</th>";
-            echo "<th>Book Attribute</th>";
-            echo "<th>Furniture Attribute</th>";
-            
-        echo "</tr>";
     
         foreach ($productlist as $pl) {
-            echo "<tr>";
-                //echo "<td>" . $pl[0] . "</td>"; 
-                echo "<td>" . $pl['sku'] . "</td>"; 
-                echo "<td>" . $pl['name'] . "</td>";
+            echo "<div>";
+            echo '<ul class="flex-container">';
+                echo '<li class="flex-item">'. $pl['sku'] ."<br>". $pl['name'] . "<br>". $pl['price'] ."<br>". $pl['productType'] . "<br>". $pl['dvd_attributes'] ."<br>". $pl['book_attributes'] ."<br>". $pl['furniture_attributes'] . "</li>";
+            echo "</ul>";
+        echo "</div>";
+
+
+           /* echo "<div>";
+                echo "<p>" . $pl['sku'] ."<br>" . $pl['name'] . "</p>";
                 echo "<td>" . $pl['price'] . "</td>";
                 echo "<td>" . $pl['productType'] . "</td>";
                 echo "<td>" . $pl['dvd_attributes'] . "</td>";
                 echo "<td>" . $pl['book_attributes'] . "</td>";
                 echo "<td>" . $pl['furniture_attributes'] . "</td>";
                 
-            echo "</tr>";
+            echo "</div>";*/
         }
-    echo "</table>";
+    
 
 } catch (PDOException $e) {
     echo "<p>Error: " . $e->getMessage() . "</p>";

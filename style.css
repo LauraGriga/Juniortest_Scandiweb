@@ -35,6 +35,27 @@ div.fieldbox {
     display: none;
   }
 
+  .flex-container {
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: space-around; 
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+  .flex-item {
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    background: #AFAFAF;
+    text-align: center;
+    font-weight: bold; 
+    font-size: 3em; 
+    line-height: 200px; 
+}
+
 footer{
     padding: 10px 50px 20px;
     text-align: center;
