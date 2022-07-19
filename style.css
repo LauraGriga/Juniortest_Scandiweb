@@ -10,18 +10,11 @@ html{
     font-family: 'Dosis', sans-serif;
 }
 
-#productlist {
-    max-width: 1200px;
-    margin: auto;
-}
-
 
 h1 {
     text-align: left;
     font-size: 1.5rem;
-    color: #e04f4f;
-    
-    
+    color: #e04f4f; 
 }
 
 #description {
@@ -38,23 +31,26 @@ div.fieldbox {
   
 .flex-container {
     display: flex;
-    flex-flow: row wrap; 
+    flex-flow: row wrap;
     justify-content: space-around; 
     padding: 0;
     margin: 0;
     list-style-type: none;
 }
 
-.flex-item {
-    padding: 5px;
-    width: 200px;
-    height: 200px;
+.flex-div {
+    padding: 10px;
+    width: 300px;
+    height: 300px;
     margin-top: 10px;
-    background: #AFAFAF;
+    background: #dedcdc;
     text-align: center;
-    font-weight: bold; 
-    font-size: 3em; 
-    line-height: 200px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+.delete-checkbox {
+    position:absolute; /* Checkbox need in top left side*/
+
 }
 
 footer{
@@ -77,31 +73,9 @@ button:hover{
     border: #e04f4f;
 }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 h4 {
     text-align: center;
     padding: 1.5rem 2.5rem;
     font-size: 1.5rem;
     color: black;
-}
-
-.card {
-    margin: 1rem;
-    background-color: #f1c5c5;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.1);
-   
-}
-
-.card:hover {
-    box-shadow: 2px 5px 45px rgba(0, 0, 0, 0.15);
-}
-
-@media screen and (min-width:600px) { 
-    
 }

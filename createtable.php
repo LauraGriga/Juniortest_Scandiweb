@@ -8,8 +8,8 @@ try {
         name TEXT NOT NULL,
         price DECIMAL NOT NULL,
         productType TEXT NOT NULL, 
-        dvd_attributes INT, 
-        book_attributes INT, 
+        dvd_attributes DECIMAL, 
+        book_attributes DECIMAL, 
         furniture_attributes TEXT
     )";
 
