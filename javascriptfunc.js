@@ -19,3 +19,7 @@ function save() {
 function redirect(){ 
        window.location.href = "productlist.php";
 }
+
+
+
+

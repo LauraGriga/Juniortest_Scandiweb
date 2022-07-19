@@ -15,8 +15,7 @@
     </div>
     <hr>
     <body>
-
-    <?php
+        <?php 
 
 require_once 'connectdb.php';
 
@@ -26,6 +25,7 @@ try {
     $productlist = $stmt->fetchAll();
     
         foreach ($productlist as $pl) {
+           
             echo "<div>";
             echo "<ul class=\"flex-container\>"; // Cant manage yet that class working properly and css ass well for flex item
                 echo "<li class=\"flex-item\>". $pl['sku'] ."<br>". $pl['name'] . "<br>". $pl['price'] ."<br>". $pl['productType'] . "<br>". $pl['dvd_attributes'] ."<br>". $pl['book_attributes'] ."<br>". $pl['furniture_attributes'] . "</li>";
@@ -33,7 +33,6 @@ try {
         echo "</div>";
         }
     
-
 } catch (PDOException $e) {
     echo "<p>Error: " . $e->getMessage() . "</p>";
 }
