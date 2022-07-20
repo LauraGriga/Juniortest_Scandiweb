@@ -16,10 +16,6 @@ function save() {
        document.getElementById("product_form").submit();       
 }
 
-function redirect(){ 
-       window.location.href = "productlist.php";
-}
-
 
 
 
