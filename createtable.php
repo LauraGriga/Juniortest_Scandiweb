@@ -8,9 +8,7 @@ try {
         name TEXT NOT NULL,
         price DECIMAL NOT NULL,
         productType TEXT NOT NULL, 
-        dvd_attributes DECIMAL, 
-        book_attributes DECIMAL, 
-        furniture_attributes TEXT
+        attributes TEXT
     )";
 
     $conn->exec($sql);

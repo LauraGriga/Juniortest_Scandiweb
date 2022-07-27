@@ -1,14 +1,14 @@
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1.00', 'DVD', '700', NULL, NULL);
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1.00', 'DVD', '700', NULL, NULL);
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1.00', 'DVD', '700', NULL, NULL);
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1.00', 'DVD', '700', NULL, NULL);
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1,00', 'DVD', '700');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1,00', 'DVD', '700');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1,00', 'DVD', '700');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'JVC200123', 'Acme DISC', '1,00', 'DVD', '700');
 
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20.00', 'Book', NULL, 2, NULL);
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20.00', 'Book', NULL, 2, NULL);
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20.00', 'Book', NULL, 2, NULL);
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20.00', 'Book', NULL, 2, NULL);
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20,00', 'Book', 2);
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20,00', 'Book', 2);
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20,00', 'Book', 2);
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'GGWP0007', 'War and Peace', '20,00', 'Book', 2);
 
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'TR120555', 'Chair', '40.00', 'Furniture', NULL, NULL, '24x45x15');
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'TR120555', 'Chair', '40.00', 'Furniture', NULL, NULL, '24x45x15');
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'TR120555', 'Chair', '40.00', 'Furniture', NULL, NULL, '24x45x15');
-INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `dvd_attributes`, `book_attributes`, `furniture_attributes`) VALUES (NULL, 'TR120555', 'Chair', '40.00', 'Furniture', NULL, NULL, '24x45x15');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'TR120555', 'Chair', '40,00', 'Furniture', '24x45x15');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'TR120555', 'Chair', '40,00', 'Furniture', '24x45x15');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'TR120555', 'Chair', '40,00', 'Furniture', '24x45x15');
+INSERT INTO `productlist` (`id`, `sku`, `name`, `price`, `productType`, `attributes`) VALUES (NULL, 'TR120555', 'Chair', '40,00', 'Furniture', '24x45x15');

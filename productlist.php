@@ -19,19 +19,34 @@
 
 require_once 'connectdb.php';
 
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $ids = array_keys($_POST['deleteId']);
+
+    $mainigais = implode(" OR ", $ids);
+
+    $sql_query = "DELETE * FROM ${mainigais}";
+}
+
 try {
     $stmt = $conn->prepare("SELECT * FROM productlist");
     $stmt->execute();
-    $productlist = $stmt->fetchAll();
-    
-        foreach ($productlist as $pl) {
-            
-            echo "<div class='flex-container'>"; 
-                echo "<div class='flex-div'>". "<input type='checkbox' id='delete-checkbox' class='delete-checkbox'>" . "<br>". $pl['sku'] ."<br>". $pl['name'] . "<br>". $pl['price'] ."<br>". $pl['productType'] . "<br>". $pl['dvd_attributes'] ."<br>". $pl['book_attributes'] ."<br>". $pl['furniture_attributes'] . "</div>";
-            echo "</div>";
-        
-        }
-    
+    $productlist = $stmt->fetchAll(); ?>
+    <form id="product_form" action="productlist.php" method="post" name="massdelete" >
+        <button type="submit">Submit</button>
+        <div class="flex-container">
+            <?php foreach ($productlist as $pl) : ?>
+                <div class="flex-div">
+                    <input type="checkbox" id="delete-checkbox" class="delete-checkbox" name="deleteId[<?=$pl['id']?>]"><br>
+                    <?=$pl['sku']?><br>
+                    <?=$pl['name']?><br>
+                    <?=$pl['price']?> $<br>
+                    <?=$pl['productType']?><br>
+                    <?=$pl['attributes']?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </form>
+    <?php
 } catch (PDOException $e) {
     echo "<p>Error: " . $e->getMessage() . "</p>";
 }

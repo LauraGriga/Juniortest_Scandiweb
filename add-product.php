@@ -16,37 +16,48 @@
 
     <?php 
     require_once 'connectdb.php';
+   
+    if ($_SERVER['REQUEST_METHOD'] == "POST___") {
+        var_dump($_POST);
+    }
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
         $stmt = $conn->prepare("INSERT INTO productlist
-        (sku, name, price, productType/*, dvd_attributes, book_attributes, furniture_attributes*/) /* Data from dynamically changing part doesnt sends to db, need to solve*/ 
-        VALUES(:sku, :name, :price, :productType/*, :dvd_attributes, book_attributes, furniture_attributes*/)");
+        (sku, name, price, productType, attributes) /* Data from dynamically changing part doesnt sends to db, need to solve*/ 
+        VALUES(:sku, :name, :price, :productType, :attributes)");
         $stmt->bindParam(':sku', $sku);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':price', $price);
         $stmt->bindParam(':productType', $productType);
-        /*
-        $stmt->bindParam(':dvd_attributes', $dvd_attributes);  //Dynamically changing field data doesnt saves in db
-        $stmt->bindParam(':book_attributes', $book_attributes);
-        $stmt->bindParam(':furniture_attributes', $furniture_attributes); 
-        */
-
+        $stmt->bindParam(':attributes', $attributes);  //Dynamically changing field data doesnt saves in db
+    
         $sku = $_POST['sku']; 
         $name = $_POST['name']; 
         $price = $_POST['price']; 
         $productType = $_POST['productType']; 
-        /*
+        
         $dvd_attributes = $_POST['dvd_attributes']; 
         $book_attributes = $_POST['book_attributes']; 
         $furniture_attributes = $_POST['furniture_attributes'];
-        */
+       
+        $attributes = $dvd_attributes; 
+        if (empty($attributes)){
+            if (!empty($book_attributes)) {
+                $attributes = $book_attributes;
+            } else if (!empty($furniture_attributes)) {
+                $attributes = "{$furniture_attributes[0]}x{$furniture_attributes[1]}x{$furniture_attributes[2]}";
+            }
+        }
 
         $stmt->execute();
+        
+        header("Location: productlist.php"); /*Redirects to productlist page*/ 
 
     } catch (PDOException $e) {
         echo "<p>Error: " . $e->getMessage() . "</p>";
     }
+    
 }
 
 ?>
@@ -69,31 +80,31 @@
                 <option value="furniture" class="furniture">Furniture</option>
             </select>
             <br>
-             <!--
+             
                 <div class="fieldbox" id="dvd_attributes">
                 <label>Size (MB)</label>
-                <input type="number" name="size" id="size" step="0.01" value="" maxlength="30">
+                <input type="number" name="dvd_attributes" id="size" step="0.01" value="" maxlength="30">
                 <div id="description">Please, provide size!</div>
                 </div>
 
                 <div class="fieldbox" id="book_attributes">
-                <label>Weight(KG)</label>
-                <input type="number" id="weight" name="weight" step="0.01" value="" maxlength="30">
+                <label>Weight (KG)</label>
+                <input type="number" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
                 <div id="description">Please, provide weight!</div>
                 </div>
 
                 <div class="fieldbox" id="furniture_attributes">
                 <label for="height">Height (CM)</label>
-                <input type="number" id="height" step="0.01" maxlength="30">
+                <input type="number" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">
                 <br>
                 <label for="width">Width (CM)</label>
-                <input type="number" id="width" step="0.01" maxlength="30">
+                <input type="number" name="furniture_attributes[1]" id="width" step="0.01" maxlength="30">
                 <br>
                 <label for="length">Length (CM)</label>
-                <input type="number" id="length" step="0.01" maxlength="30">
+                <input type="number" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
                 <div id="description">Please, provide dimensions!</div>
                 </div>
-            -->
+           
             
         </form>
 

@@ -7,9 +7,14 @@ const map = {
      function prodTypeSelection(value) {
        document
          .querySelectorAll(".fieldbox")
-         .forEach((node) => (node.style.display = "none"));
+         .forEach((node) => {
+            node.style.display = "none";
+            node.removeAttribute("required");
+         });
      
-       document.getElementById(map[value]).style.display = "block";
+         var formElement = document.getElementById(map[value]);
+         formElement.style.display = "block";
+         formElement.setAttribute("required", "required");
      }
 
 function save() {
