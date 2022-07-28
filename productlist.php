@@ -13,7 +13,7 @@ require_once 'connectdb.php';
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         try {
             $ids = array_keys($_POST['deleteId']);
-            $selected = implode(" OR ", $ids);
+            $selected = implode(", ", $ids);
             $stmt = $conn->prepare("DELETE FROM productlist WHERE id in ($selected)");
                 
             $stmt->execute();
@@ -35,8 +35,10 @@ try {
     $stmt->execute();
     $productlist = $stmt->fetchAll(); ?>
     <form id="product_form" action="productlist.php" method="post" name="massdelete" >
+
+    <!--Need to format with css that text and buttons is in one line-->
     <nav>
-        <h1>Product list</h1>
+        <h3>Product list</h3>
         <div class = "buttonposition">
         <button type="button" onclick="window.location.href='add-product.php'">ADD</button>
         <button type="submit" id="delete-product-btn"> MASS DELETE</button>
@@ -50,7 +52,7 @@ try {
                     <?=$pl['sku']?><br>
                     <?=$pl['name']?><br>
                     <?=$pl['price']?> $<br>
-                    <?=$pl['productType']?><br>
+                    <!--Need to add information before and after attribute depending of ProductType -->
                     <?=$pl['attributes']?>
                 </div>
             <?php endforeach; ?>
@@ -64,6 +66,7 @@ try {
 $conn = null;
 ?>
     </body>
+    <br>
     <hr>
     <footer>Scandiweb Test assigment</footer>
 </html>

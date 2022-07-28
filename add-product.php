@@ -5,11 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-    
-        <h1>Product Add</h1>
+
+    <!--Need to format with css that text and buttons is in one line-->
+    <nav>
+        <h3>Product Add</h3>
         <div class = "buttonposition">
         <button type="submit" onclick="save()" >Save</button> 
-        <button onclick="window.location.href='productlist.php'">Cancel</button></div>
+        <button onclick="window.location.href='productlist.php'">Cancel</button>
+        </div>
+    </nav>
     <hr>
     <body>
 
@@ -17,9 +21,10 @@
     require_once 'connectdb.php';
 
    //Information for testing
-    if ($_SERVER['REQUEST_METHOD'] == "POST___") {
+    if ($_SERVER['REQUEST_METHOD'] == "POST__") {
         var_dump($_POST);
     }
+    // Posting data in to db table productlist
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
@@ -60,6 +65,8 @@
 }
 
 ?>
+        <!--Visual side(structure) of Add product form-->
+
            <form id="product_form" action="add-product.php" method="post" name="productform" >
             <label for="sku" id="sku">SKU</label>
             <input type="text" id="sku" name="sku" required="required" maxlength="30" oninvalid="this.setCustomValidity('Please, submit required data')"
@@ -109,6 +116,7 @@
 
     </body>
     <script src="javascriptfunc.js"></script>
+    <br>
     <hr>
     <footer>Scandiweb Test assigment</footer>
 </html>
