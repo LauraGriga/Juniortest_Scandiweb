@@ -8,15 +8,15 @@
     
         <h1>Product Add</h1>
         <div class = "buttonposition">
-        <button type="submit" onclick="save()" >Save</button> <!--Need to make that page redirects to productict list page after submitting-->
+        <button type="submit" onclick="save()" >Save</button> 
         <button onclick="window.location.href='productlist.php'">Cancel</button></div>
     <hr>
-    
     <body>
 
     <?php 
     require_once 'connectdb.php';
-   
+
+   //Information for testing
     if ($_SERVER['REQUEST_METHOD'] == "POST___") {
         var_dump($_POST);
     }
@@ -24,13 +24,13 @@
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
     try {
         $stmt = $conn->prepare("INSERT INTO productlist
-        (sku, name, price, productType, attributes) /* Data from dynamically changing part doesnt sends to db, need to solve*/ 
+        (sku, name, price, productType, attributes) 
         VALUES(:sku, :name, :price, :productType, :attributes)");
         $stmt->bindParam(':sku', $sku);
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':price', $price);
         $stmt->bindParam(':productType', $productType);
-        $stmt->bindParam(':attributes', $attributes);  //Dynamically changing field data doesnt saves in db
+        $stmt->bindParam(':attributes', $attributes);  
     
         $sku = $_POST['sku']; 
         $name = $_POST['name']; 
@@ -57,7 +57,6 @@
     } catch (PDOException $e) {
         echo "<p>Error: " . $e->getMessage() . "</p>";
     }
-    
 }
 
 ?>
