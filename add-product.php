@@ -16,15 +16,16 @@
 
     <!--Need to format with css that text and buttons is in one line-->
     <div id="title">
-                <nav class="navbar">
-                    <div class="container-fluid">
-                    <a class="navbar-brand">Product list</a>
-                    <span class="navbar-item">
-                    <button class="btn btn-light btn-style" type="submit" onclick="save()" >Save</button>
-                    <button class="btn btn-light btn-style" onclick="window.location.href='productlist.php'">Cancel</button>
-                    </div>
-                </nav>
+        <nav class="navbar">
+            <div class="container-fluid">
+                <a class="navbar-brand">Product list</a>
+                <span class="navbar-item">
+                <button class="btn btn-light btn-style" type="submit" onclick="validateForm()" >Save</button>
+                <button class="btn btn-light btn-style" onclick="window.location.href='productlist.php'">Cancel</button>
+                </span>
             </div>
+        </nav>
+    </div>
     <hr>
     <body>
     
@@ -78,61 +79,80 @@
 }
 
 ?>
-        <!--Visual side(structure) of Add product form-->
 
-           <form id="product_form" action="add-product.php" method="post" name="productform" >
-                <div class="mb-3">
-                <label for="sku" id="sku">SKU</label>
-                <input type="text" id="sku" name="sku" maxlength="30" oninvalid="this.setCustomValidity('Please, submit required data')"
-                oninput="this.setCustomValidity('')">
+<!-- Add product forms body -->
+
+           <form id="product_form" action="add-product.php" method="post" name="productform" onsubmit="return validateForm()">
+
+                <div class="row mb-3">
+                    <label for="sku" class="col-sm-2 col-form-label label-format" id="sku">SKU</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="sku" name="sku" maxlength="30" required>
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                <label for="name" id="name">Name</label>
-                <input type="text" id="name" name="name" maxlength="30">
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-2 col-form-label label-format" id="name">Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="name" name="name" maxlength="30" required>
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                <label for="price" id="price">Price($)</label>
-                <input type="number" id="price" step="0.01" name="price" maxlength="30">
+                <div class="row mb-3">
+                    <label for="price" class="col-sm-2 col-form-label label-format" id="price">Price($)</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="price" step="0.01" name="price" maxlength="30" required>
+                    </div>
                 </div>
                 
-                <div class="input-group mb-3">
-                <label for="productType">Type Switcher</label>
-                <select name="productType" class="form-select" id="productType" onchange="prodTypeSelection(this.value)">
-                        <option value="">Type Switcher</option>
-                        <option value="dvd" class="dvd">DVD</option>
-                        <option value="book" class="book">Book</option>
-                        <option value="furniture" class="furniture">Furniture</option>
-                    </select>
+                <div class="input-group row mb-3">
+                <label for="productType" class="col-sm-2 col-form-label label-format">Type Switcher</label>
+                    <div class="col-sm-4">
+                        <select name="productType" class="form-select" id="productType" onchange="prodTypeSelection(this.value)">
+                                <option value="">Type Switcher</option>
+                                <option value="dvd" class="dvd">DVD</option>
+                                <option value="book" class="book">Book</option>
+                                <option value="furniture" class="furniture">Furniture</option>
+                        </select>
+                    </div>
                 </div>
              
-                <div class=" mb-3 fieldbox" id="dvd_attributes">
-                <label>Size (MB)</label>
-                <input type="number" name="dvd_attributes" id="size" step="0.01" value="" maxlength="30">
-                <div id="description">Please, provide size!</div>
+                <div class="row mb-3 fieldbox" id="dvd_attributes">
+                    <label class="col-sm-2 col-form-label label-format">Size (MB)</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" name="dvd_attributes" id="size" step="0.01" value="" maxlength="30">
+                        <div id="description">Please, provide size!</div> 
+                        <!-- Need to check how better description add-->
+                    </div>
                 </div>
 
-                <div class=" mb-3 fieldbox" id="book_attributes">
-                <label>Weight (KG)</label>
-                <input type="number" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
-                <div id="description">Please, provide weight!</div>
+                <div class="row mb-3 fieldbox" id="book_attributes">
+                    <label class="col-sm-2 col-form-label label-format">Weight (KG)</label>
+                    <div class="col-sm-4">
+                        <input type="number" class="form-control" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
+                    </div>
+                    <div id="description">Please, provide weight!</div>
                 </div>
 
-                <div class="mb-3 fieldbox" id="furniture_attributes">
-                <label for="height">Height (CM)</label>
-                <input type="number" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">
-                <br>
-                <label for="width">Width (CM)</label>
-                <input type="number" name="furniture_attributes[1]" id="width" step="0.01" maxlength="30">
-                <br>
-                <label for="length">Length (CM)</label>
-                <input type="number" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
-                <div id="description">Please, provide dimensions!</div>
+                <div class="row mb-3 fieldbox" id="furniture_attributes">
+                        <label class="col-sm-2 col-form-label label-format" for="height">Height (CM)</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label label-format" for="width">Width (CM)</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="furniture_attributes[1]" id="width" step="0.01" maxlength="30">
+                        </div>
+
+                        <label class="col-sm-2 col-form-label label-format" for="length">Length (CM)</label>
+                        <div class="col-sm-4">
+                            <input type="number" class="form-control" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
+                        </div>
+                        <div id="description">Please, provide dimensions!</div>
                 </div>
            
-            
-        </form>
+            </form>
 </div>
 
     </body>

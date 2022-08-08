@@ -32,6 +32,11 @@ hr {
 
 }
 
+.navbar-brand:hover{
+    color: #F47C7C;
+
+}
+
 .btn-style {
     background-color: #FFF2F2;
 }
@@ -68,5 +73,10 @@ div.fieldbox {
     font-size: 1rem;
     color: rgb(57, 44, 173);
     padding: 0.75rem 5rem;
+}
+
+.label-format {
+    text-align: center;
+    font-weight: bold;
 }
 
