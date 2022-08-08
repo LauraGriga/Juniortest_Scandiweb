@@ -1,81 +1,72 @@
+/* Common styling */
 
-* {
-    box-sizing: border-box;
+#body {
+    padding: 2%;
 }
 
-html{
-    line-height: 1.6;
-    color: rgb(36, 23, 47);
-    background: #f0d7d7;
-    font-family: 'Dosis', sans-serif;
+#footer {
+    padding: 2%;
+    text-align: center;
+    color: grey;
+    font-size: 0.75rem;
+    
+}
+
+body {
+    background-color: #FAD4D4;
+}
+
+hr {
+    border: solid grey 1px;
+    border-bottom: none;
+    margin: 0;
+}
+
+/* Navbar section */
+
+.navbar-brand{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #F47C7C;
+
+}
+
+.btn-style {
+    background-color: #FFF2F2;
+}
+
+.btn-style:hover {
+    background-color: #EF9F9F;
+}
+
+.button-position{
+    text-align: right;
 }
 
 
-h3 {
-    text-align: left;
-    color: #e04f4f; 
-}
-
-#description {
-    font-size: 1rem;
-    color: rgb(57, 44, 173);
-    padding: 0.75rem 5rem;
+.card{
+    background-color: #FFF2F2;
+    padding: 2%;
+    text-align: center;
+    margin: 2%;
 
 }
 
+.delete-checkbox{
+    width:auto;
+    float:left;
+}
+
+/* Form section */
 
 div.fieldbox {
     display: none;
   }
 
-  
-.flex-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly; 
-    padding: 5px;
-    margin: 0;
-    list-style-type: none;
-}
-
-.flex-div {
-    padding: 10px;
-    width: 200px;
-    height: 200px;
-    margin-top: 10px;
-    background: #f7eaea;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+  #description {
     font-size: 1rem;
-}
-#delete-checkbox {
-width:auto;
-float:left;
+    color: rgb(57, 44, 173);
+    padding: 0.75rem 5rem;
 }
 
-footer{
-    padding: 10px 50px 20px;
-    text-align: center;
-
-}
-button{
-    background-color: white;
-    border: 1px solid #e04f4f;
-    box-shadow: 5px 1px 1px rgb(44, 41, 41);
-
-}
-div.buttonposition{
-    text-align: right;
-}
-
-button:hover{
-    background-color: #e04f4f;
-    border: #e04f4f;
-}
-
-h4 {
-    text-align: center;
-    padding: 1.5rem 2.5rem;
-    font-size: 1.5rem;
-    color: black;
-}
