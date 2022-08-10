@@ -69,19 +69,13 @@
                                     <?=$pl['sku']?><br>
                                     <?=$pl['name']?><br>
                                     <?=$pl['price']?> $<br>
-
-                                    <!--Need to add information before and after attribute depending of ProductType 
-                                    this kind of logic: 
-
-                                     if (productType=='dvd'){
-                                        echo "Size: "+$pl['attributes']+" MB"
-                                    } elseif (($pl['productType'])=='book'){
-                                        echo "Weight: "+ $pl['attributes']+ " KG"
+                                    <?php if ($pl['productType'] =='dvd') {
+                                        echo "Size: " . $pl['attributes'] . " MB";
+                                    } elseif ($pl['productType'] == 'book') {
+                                        echo "Weight: " . $pl['attributes'] . " KG";
                                     } else {
-                                        echo "Dimension: "+$pl['attributes']
-                                    } -->
-
-                                    <?=$pl['attributes']?>
+                                        echo "Dimension: " . $pl['attributes'];
+                                    } ?>
 
                                     </div>
                                 </div>

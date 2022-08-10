@@ -1,65 +1,51 @@
-const map = {
-       "dvd": "dvd_attributes",
-       "book": "book_attributes",
-       furniture: "furniture_attributes"
-     };
-     
-     function prodTypeSelection(value) {
-       document
-         .querySelectorAll(".fieldbox")
-         .forEach((node) => {
-            node.style.display = "none";
-         });
-     
-         var formElement = document.getElementById(map[value]);
-         formElement.style.display = "block";
-        
-     }
+function prodTypeSelection(value) {
+  document
+    .querySelectorAll(".fieldbox")
+    .forEach((fieldBox) => {
+      if (value + '_attributes' != fieldBox.id) {
+        fieldBox.style.display = "none";
+        fieldBox.querySelectorAll("input").forEach((input) => {
+          input.required = false;
+        });
+      } else {
+        fieldBox.style.display = '';
+        fieldBox.querySelectorAll("input").forEach((input) => {
+          input.required = true;
+        });
+      }
+    });
+
+}
 
 function validateForm() {
-    var sku = document.forms.product_form.sku.value;
-    var name = document.forms.product_form.name.value;
-    var price = document.forms.product_form.price.value;
-    var productType = document.forms.product_form.productType.value;
-    // var dvd_attributes = document.forms.product_form.dvd_attributes.value;
-    // var book_attributes = document.forms.product_form.book_attributes.value;
-    // var furniture_attributes0 = document.forms.product_form.furniture_attributes[0].value;
-    // var furniture_attributes1 = document.forms.product_form.furniture_attributes[1].value;
-    // var furniture_attributes2 = document.forms.product_form.furniture_attributes[2].value;
+  var inputs = document.getElementsByTagName("input");
+  var selects = document.getElementsByTagName("select");
+  var allFileds = [...inputs, ...selects];
+  var kļūdas = 0;
 
-    if (sku == "") {
-      window.alert("Please, submit required data!");
-      sku.focus();
-      return false;
+  // loop through all inputs and check if they are empty
+  // 1. Saskaitīt, cik kopā ir vajadzīgie (required) lauki
+  for (var i = 0; i < allFileds.length; i++) {
+    var field = allFileds[i];
+    if (field.required && field.value == "") {
+      // 2. Saskaitīt, cik ir kļūdas
+      alert("Please, submit required data!");
+      kļūdas++;
+      field.focus();
+      return false; // Iespējams arī jānovāc, ja grib skaitīt laukus
+      break; // Jānovāc, ja grib skaitīt laukus
+    } else {
+      // skaita laukus, ja nav tukši
     }
+  }
 
-    if (name == "") {
-      window.alert("Please, submit required data!");
-      name.focus();
-      return false;
-    }
+  // 3. Pārbaudīt, vai kļūdas un lauku skaits sakrīt
 
-    if (price == "") {
-      window.alert("Please, submit required data!");
-      price.focus();
-      return false;
-    }
+  return true; // jāpārbauda, vai ir kļūdas vai nav un attiecīgi jāatgriež true vai false
+}
 
-    if (productType == "") {
-      window.alert("Please, submit required data!");
-      productType.focus();
-      return false;
-    }
-  return document.getElementById("product_form").submit();
-
-
-  // let x = document.forms["productform"]["sku"].value;
-  // if (x == "") {
-  //   alert("Please, submit required data!");
-  //   return false;
-  // } else {
-  //   document.getElementById("product_form").submit(); 
-  // }
+window.onload = function () {
+  prodTypeSelection(document.getElementById("productType").value);
 }
 
 

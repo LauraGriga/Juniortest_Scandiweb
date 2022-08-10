@@ -14,7 +14,6 @@
     
     </head>
 
-    <!--Need to format with css that text and buttons is in one line-->
     <div id="title">
         <nav class="navbar">
             <div class="container-fluid">
@@ -108,7 +107,7 @@
                 <div class="input-group row mb-3">
                 <label for="productType" class="col-sm-2 col-form-label label-format">Type Switcher</label>
                     <div class="col-sm-4">
-                        <select name="productType" class="form-select" id="productType" onchange="prodTypeSelection(this.value)">
+                        <select name="productType" class="form-select" id="productType" onchange="prodTypeSelection(this.value)" required>
                                 <option value="">Type Switcher</option>
                                 <option value="dvd" class="dvd">DVD</option>
                                 <option value="book" class="book">Book</option>
@@ -116,8 +115,6 @@
                         </select>
                     </div>
                 </div>
-
-                <!-- Need to fix that fields bellow shows same as first ones! -->
 
                 <div class="row mb-3 fieldbox" id="dvd_attributes">
                     <label class="col-sm-2 col-form-label label-format">Size (MB)</label>
@@ -144,12 +141,12 @@
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">
                         </div>
-
+                        <div class="w-100 mb-3"></div>
                         <label class="col-sm-2 col-form-label label-format" for="width">Width (CM)</label>
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="furniture_attributes[1]" id="width" step="0.01" maxlength="30">
                         </div>
-
+                        <div class="w-100 mb-3"></div>
                         <label class="col-sm-2 col-form-label label-format" for="length">Length (CM)</label>
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
