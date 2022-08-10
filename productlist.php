@@ -69,8 +69,20 @@
                                     <?=$pl['sku']?><br>
                                     <?=$pl['name']?><br>
                                     <?=$pl['price']?> $<br>
-                                    <!--Need to add information before and after attribute depending of ProductType -->
+
+                                    <!--Need to add information before and after attribute depending of ProductType 
+                                    this kind of logic: 
+
+                                     if (productType=='dvd'){
+                                        echo "Size: "+$pl['attributes']+" MB"
+                                    } elseif (($pl['productType'])=='book'){
+                                        echo "Weight: "+ $pl['attributes']+ " KG"
+                                    } else {
+                                        echo "Dimension: "+$pl['attributes']
+                                    } -->
+
                                     <?=$pl['attributes']?>
+
                                     </div>
                                 </div>
                             </div>
@@ -87,7 +99,7 @@
             </div>
     </body>
     <hr>
-    
+
     <script src="javascriptfunc.js"></script>
    
     <!-- Footer -->

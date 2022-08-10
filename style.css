@@ -2,6 +2,7 @@
 
 #body {
     padding: 2%;
+    margin-bottom: 5%;
 }
 
 #footer {
@@ -69,10 +70,9 @@ div.fieldbox {
     display: none;
   }
 
-  #description {
+.description {
     font-size: 1rem;
     color: rgb(57, 44, 173);
-    padding: 0.75rem 5rem;
 }
 
 .label-format {

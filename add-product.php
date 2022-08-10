@@ -116,22 +116,27 @@
                         </select>
                     </div>
                 </div>
-             
+
+                <!-- Need to fix that fields bellow shows same as first ones! -->
+
                 <div class="row mb-3 fieldbox" id="dvd_attributes">
                     <label class="col-sm-2 col-form-label label-format">Size (MB)</label>
                     <div class="col-sm-4">
+                        <span>
                         <input type="number" class="form-control" name="dvd_attributes" id="size" step="0.01" value="" maxlength="30">
-                        <div id="description">Please, provide size!</div> 
-                        <!-- Need to check how better description add-->
+                        <span class="description">Please, provide size!</span> 
+                        </span>
+                        
                     </div>
+
                 </div>
 
                 <div class="row mb-3 fieldbox" id="book_attributes">
                     <label class="col-sm-2 col-form-label label-format">Weight (KG)</label>
                     <div class="col-sm-4">
                         <input type="number" class="form-control" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
+                        <p class="description">Please, provide weight!</p>
                     </div>
-                    <div id="description">Please, provide weight!</div>
                 </div>
 
                 <div class="row mb-3 fieldbox" id="furniture_attributes">
@@ -148,9 +153,10 @@
                         <label class="col-sm-2 col-form-label label-format" for="length">Length (CM)</label>
                         <div class="col-sm-4">
                             <input type="number" class="form-control" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
-                        </div>
-                        <div id="description">Please, provide dimensions!</div>
+                            <p class="description">Please, provide dimensions!</p>
+                        </div>                        
                 </div>
+                
            
             </form>
 </div>
