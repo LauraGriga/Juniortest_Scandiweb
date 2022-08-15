@@ -21,27 +21,19 @@ function validateForm() {
   var inputs = document.getElementsByTagName("input");
   var selects = document.getElementsByTagName("select");
   var allFileds = [...inputs, ...selects];
-  var kļūdas = 0;
 
   // loop through all inputs and check if they are empty
-  // 1. Saskaitīt, cik kopā ir vajadzīgie (required) lauki
   for (var i = 0; i < allFileds.length; i++) {
     var field = allFileds[i];
     if (field.required && field.value == "") {
-      // 2. Saskaitīt, cik ir kļūdas
       alert("Please, submit required data!");
-      kļūdas++;
       field.focus();
-      return false; // Iespējams arī jānovāc, ja grib skaitīt laukus
-      break; // Jānovāc, ja grib skaitīt laukus
-    } else {
-      // skaita laukus, ja nav tukši
-    }
+      return false; 
+      break; 
+    } 
+
   }
-
-  // 3. Pārbaudīt, vai kļūdas un lauku skaits sakrīt
-
-  return true; // jāpārbauda, vai ir kļūdas vai nav un attiecīgi jāatgriež true vai false
+  return document.getElementById("product_form").submit();
 }
 
 window.onload = function () {

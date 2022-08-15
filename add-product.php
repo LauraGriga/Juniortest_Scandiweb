@@ -17,7 +17,7 @@
     <div id="title">
         <nav class="navbar">
             <div class="container-fluid">
-                <a class="navbar-brand">Product list</a>
+                <a class="navbar-brand">Product Add</a>
                 <span class="navbar-item">
                 <button class="btn btn-light btn-style" type="submit" onclick="validateForm()" >Save</button>
                 <button class="btn btn-light btn-style" onclick="window.location.href='productlist.php'">Cancel</button>
