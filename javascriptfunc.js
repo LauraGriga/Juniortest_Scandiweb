@@ -27,6 +27,8 @@ function validateForm() {
     var field = allFileds[i];
     if (field.required && field.value == "") {
       alert("Please, submit required data!");
+      document. getElementById("product_form"). className = "was-validated"
+
       field.focus();
       return false; 
       break; 
@@ -39,7 +41,3 @@ function validateForm() {
 window.onload = function () {
   prodTypeSelection(document.getElementById("productType").value);
 }
-
-
-
-

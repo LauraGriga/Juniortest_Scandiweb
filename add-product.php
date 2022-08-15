@@ -81,81 +81,91 @@
 
 <!-- Add product forms body -->
 
-           <form id="product_form" action="add-product.php" method="post" name="productform" onsubmit="return validateForm()">
+<form id="product_form" class="needs-validation" action="add-product.php" method="post" name="productform" onsubmit="return validateForm()" novalidate>
 
-                <div class="row mb-3">
-                    <label for="sku" class="col-sm-2 col-form-label label-format" id="sku">SKU</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="sku" name="sku" maxlength="30" required>
-                    </div>
-                </div>
+<div class="row mb-3">
+    <label for="sku" class="col-sm-2 col-form-label label-format" id="sku">SKU</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control" id="sku" name="sku" maxlength="30" required>
+        <div class="invalid-feedback">Please, provide the data of indicated type</div>
+    </div>
+    
+</div>
 
-                <div class="row mb-3">
-                    <label for="name" class="col-sm-2 col-form-label label-format" id="name">Name</label>
-                    <div class="col-sm-4">
-                        <input type="text" class="form-control" id="name" name="name" maxlength="30" required>
-                    </div>
-                </div>
+<div class="row mb-3">
+    <label for="name" class="col-sm-2 col-form-label label-format" id="name">Name</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control" id="name" name="name" maxlength="30" required>
+        <div class="invalid-feedback">Please, provide the data of indicated type</div>
+    </div>
+</div>
 
-                <div class="row mb-3">
-                    <label for="price" class="col-sm-2 col-form-label label-format" id="price">Price($)</label>
-                    <div class="col-sm-4">
-                        <input type="number" class="form-control" id="price" step="0.01" name="price" maxlength="30" required>
-                    </div>
-                </div>
-                
-                <div class="input-group row mb-3">
-                <label for="productType" class="col-sm-2 col-form-label label-format">Type Switcher</label>
-                    <div class="col-sm-4">
-                        <select name="productType" class="form-select" id="productType" onchange="prodTypeSelection(this.value)" required>
-                                <option value="">Type Switcher</option>
-                                <option value="dvd" class="dvd">DVD</option>
-                                <option value="book" class="book">Book</option>
-                                <option value="furniture" class="furniture">Furniture</option>
-                        </select>
-                    </div>
-                </div>
+<div class="row mb-3">
+    <label for="price" class="col-sm-2 col-form-label label-format" id="price">Price($)</label>
+    <div class="col-sm-4">
+        <input type="number" class="form-control" id="price" step="0.01" name="price" maxlength="30" required>
+        <div class="invalid-feedback">Please, provide the data of indicated type</div>
+    </div>
+</div>
 
-                <div class="row mb-3 fieldbox" id="dvd_attributes">
-                    <label class="col-sm-2 col-form-label label-format">Size (MB)</label>
-                    <div class="col-sm-4">
-                        <span>
-                        <input type="number" class="form-control" name="dvd_attributes" id="size" step="0.01" value="" maxlength="30">
-                        <span class="description">Please, provide size!</span> 
-                        </span>
-                        
-                    </div>
+<div class="input-group row mb-3">
+<label for="productType" class="col-sm-2 col-form-label label-format">Type Switcher</label>
+    <div class="col-sm-4">
+        <select name="productType" class="form-select" id="productType" onchange="prodTypeSelection(this.value)" required>
+                <option value="">Type Switcher</option>
+                <option value="dvd" class="dvd">DVD</option>
+                <option value="book" class="book">Book</option>
+                <option value="furniture" class="furniture">Furniture</option>
+        </select>
+        <div class="invalid-feedback">Please, provide the data of indicated type</div>
+    </div>
+</div>
 
-                </div>
+<div class="row mb-3 fieldbox" id="dvd_attributes">
+    <label class="col-sm-2 col-form-label label-format">Size (MB)</label>
+    <div class="col-sm-4">
+        <span>
+        <input type="number" class="form-control" name="dvd_attributes" id="size" step="0.01" value="" maxlength="30">
+        <div class="invalid-feedback">Please, provide the data of indicated type</div>
+        <span class="description">Please, provide size!</span> 
+        </span>
+        
+    </div>
 
-                <div class="row mb-3 fieldbox" id="book_attributes">
-                    <label class="col-sm-2 col-form-label label-format">Weight (KG)</label>
-                    <div class="col-sm-4">
-                        <input type="number" class="form-control" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
-                        <p class="description">Please, provide weight!</p>
-                    </div>
-                </div>
+</div>
 
-                <div class="row mb-3 fieldbox" id="furniture_attributes">
-                        <label class="col-sm-2 col-form-label label-format" for="height">Height (CM)</label>
-                        <div class="col-sm-4">
-                            <input type="number" class="form-control" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">
-                        </div>
-                        <div class="w-100 mb-3"></div>
-                        <label class="col-sm-2 col-form-label label-format" for="width">Width (CM)</label>
-                        <div class="col-sm-4">
-                            <input type="number" class="form-control" name="furniture_attributes[1]" id="width" step="0.01" maxlength="30">
-                        </div>
-                        <div class="w-100 mb-3"></div>
-                        <label class="col-sm-2 col-form-label label-format" for="length">Length (CM)</label>
-                        <div class="col-sm-4">
-                            <input type="number" class="form-control" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
-                            <p class="description">Please, provide dimensions!</p>
-                        </div>                        
-                </div>
-                
-           
-            </form>
+<div class="row mb-3 fieldbox" id="book_attributes">
+    <label class="col-sm-2 col-form-label label-format">Weight (KG)</label>
+    <div class="col-sm-4">
+        <input type="number" class="form-control" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
+        <p class="description">Please, provide weight!</p>
+        <div class="invalid-feedback">Please, provide the data of indicated type</div>
+    </div>
+</div>
+
+<div class="row mb-3 fieldbox" id="furniture_attributes">
+        <label class="col-sm-2 col-form-label label-format" for="height">Height (CM)</label>
+        <div class="col-sm-4">
+            <input type="number" class="form-control" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">
+            <div class="invalid-feedback">Please, provide the data of indicated type</div>
+        </div>
+        <div class="w-100 mb-3"></div>
+        <label class="col-sm-2 col-form-label label-format" for="width">Width (CM)</label>
+        <div class="col-sm-4">
+            <input type="number" class="form-control" name="furniture_attributes[1]" id="width" step="0.01" maxlength="30">
+            <div class="invalid-feedback">Please, provide the data of indicated type</div>
+        </div>
+        <div class="w-100 mb-3"></div>
+        <label class="col-sm-2 col-form-label label-format" for="length">Length (CM)</label>
+        <div class="col-sm-4">
+            <input type="number" class="form-control" name="furniture_attributes[2]" id="length" step="0.01" maxlength="30">
+            <div class="invalid-feedback">Please, provide the data of indicated type</div>
+            <p class="description">Please, provide dimensions!</p>
+        </div>                        
+</div>
+
+
+</form>
 </div>
 
     </body>
