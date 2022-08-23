@@ -121,7 +121,7 @@
     </div>
 </div>
 
-<div class="row mb-3 fieldbox" id="dvd_attributes">
+<div class="row mb-3 fieldbox" id="DVD">
     <label class="col-sm-2 col-form-label label-format">Size (MB)</label>
     <div class="col-sm-4">
         <span>
@@ -134,7 +134,7 @@
 
 </div>
 
-<div class="row mb-3 fieldbox" id="book_attributes">
+<div class="row mb-3 fieldbox" id="Book">
     <label class="col-sm-2 col-form-label label-format">Weight (KG)</label>
     <div class="col-sm-4">
         <input type="number" class="form-control" id="weight" name="book_attributes" step="0.01" value="" maxlength="30">
@@ -143,7 +143,7 @@
     </div>
 </div>
 
-<div class="row mb-3 fieldbox" id="furniture_attributes">
+<div class="row mb-3 fieldbox" id="Furniture">
         <label class="col-sm-2 col-form-label label-format" for="height">Height (CM)</label>
         <div class="col-sm-4">
             <input type="number" class="form-control" name="furniture_attributes[0]" id="height" step="0.01" maxlength="30">

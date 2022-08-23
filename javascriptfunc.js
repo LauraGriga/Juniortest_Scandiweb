@@ -1,21 +1,36 @@
+// function prodTypeSelection(value) {
+//   document
+//     .querySelectorAll(".fieldbox")
+//     .forEach((fieldBox) => {
+//       if (value + '_attributes' != fieldBox.id) {
+//         fieldBox.style.display = "none";
+//         fieldBox.querySelectorAll("input").forEach((input) => {
+//           input.required = false;
+//         });
+//       } else {
+//         fieldBox.style.display = '';
+//         fieldBox.querySelectorAll("input").forEach((input) => {
+//           input.required = true;
+//         });
+//       }
+//     });
+
+// }
+
+const map = {
+  "dvd": "DVD",
+  "book": "Book",
+  furniture: "Furniture"
+};
+
 function prodTypeSelection(value) {
   document
     .querySelectorAll(".fieldbox")
-    .forEach((fieldBox) => {
-      if (value + '_attributes' != fieldBox.id) {
-        fieldBox.style.display = "none";
-        fieldBox.querySelectorAll("input").forEach((input) => {
-          input.required = false;
-        });
-      } else {
-        fieldBox.style.display = '';
-        fieldBox.querySelectorAll("input").forEach((input) => {
-          input.required = true;
-        });
-      }
-    });
+    .forEach((node) => (node.style.display = "none"));
 
+  document.getElementById(map[value]).style.display = "block";
 }
+
 
 function validateForm() {
   var inputs = document.getElementsByTagName("input");
